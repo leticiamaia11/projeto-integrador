@@ -1,34 +1,137 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+    --primary-color: #556B2F;
+    --primary-hover: #394826;
+    --text-light: #E9F1D0;
+    --overlay: rgba(50, 60, 35, 0.55);
+    --card-bg: rgba(120, 140, 80, 0.85);
+    --text-dark: #2E2A1F;
+}
+
+/* Fundo */
+body {
+    background-image: url("imagens/forest-6364913_1280.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-light);
+    text-shadow: 1px 2px 3px #000;
+}
+
+/* Overlay */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: var(--overlay);
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 50px;
+}
 
 .container {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* ocupa 100% da altura da tela */
-  overflow: hidden; /* evita scroll desnecessário */
+    display: flex;
+    gap: 25px;
 }
 
-.fundo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* mantém a proporção da imagem e preenche a tela */
+a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* cor semi-transparente */
+a:hover {
+    text-decoration: underline;
 }
 
-.conteudo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
+/* Cartão central */
+.form-card {
+    background: var(--card-bg);
+    width: 70%;
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
 }
 
+/* Títulos */
+h1 {
+    font-family: 'DM Serif Text', serif;
+    font-size: 2.2em;
+    margin-top: 0;
+    text-align: center;
+}
 
+p {
+    font-size: 1.1em;
+    opacity: 0.9;
+    text-align: center;
+}
+
+/* Grupos das perguntas */
+.form-group {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.form-group label {
+    font-weight: 400;
+    color: var(--text-light);
+    text-shadow: 1px 1px 2px #000;
+}
+
+/* Opções */
+.options {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.options label {
+    font-weight: 400;
+    color: var(--text-light);
+}
+
+/* Botão */
+.cta-button {
+    background: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    font-size: 1.1em;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display: block;
+    margin: 0 auto;
+    width: 150px; /* tamanho do botão */
+    text-align: center; /* garante texto centralizado */
+}
+
+.cta-button:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: smaller;
+}

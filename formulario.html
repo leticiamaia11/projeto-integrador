@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustain Flow — Formulário ESG</title>
+    <link rel="shortcut icon" href="imagens/favicon-16x16.png" type="image/x-icon">
+    <link rel="stylesheet" href="interno.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="imagens/logo.png" alt="Logo Sustain Flow"></div>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        <form class="form-esg">
+            <h1>Práticas de Sustentabilidade</h1>
+            <p>Responda às perguntas abaixo. A pontuação inicial é de 1000 pontos.</p>
+
+            <!-- 1 -->
+            <div class="form-group">
+                <label>1. A empresa possui uma política formal de redução de emissões de CO2?</label>
+                <div class="options">
+                    <label><input type="radio" name="q1_emissao" value="a_sem_deducao" required> A) Política estabelecida e monitorada.</label>
+                    <label><input type="radio" name="q1_emissao" value="b_media_deducao"> B) Em planejamento ou piloto.</label>
+                    <label><input type="radio" name="q1_emissao" value="c_alta_deducao"> C) Não possui política formal.</label>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="form-group">
+                <label>2. Como é feito o descarte e gestão de resíduos industriais?</label>
+                <div class="options">
+                    <label><input type="radio" name="q2_residuos" value="a_sem_deducao" required> A) Certificada com rastreabilidade.</label>
+                    <label><input type="radio" name="q2_residuos" value="b_media_deducao"> B) Terceiros sem auditoria.</label>
+                    <label><input type="radio" name="q2_residuos" value="c_alta_deducao"> C) Descarte comum sem foco sustentável.</label>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="form-group">
+                <label>3. Percentual aproximado de água de reuso?</label>
+                <div class="options">
+                    <label><input type="radio" name="q3_reuso" value="a_sem_deducao" required> A) Acima de 50%.</label>
+                    <label><input type="radio" name="q3_reuso" value="b_media_deducao"> B) Entre 10% e 50%.</label>
+                    <label><input type="radio" name="q3_reuso" value="c_alta_deducao"> C) Menos de 10%.</label>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="form-group">
+                <label>4. Principal fonte de energia elétrica da operação:</label>
+                <div class="options">
+                    <label><input type="radio" name="q4_energia" value="a_sem_deducao" required> A) Fontes renováveis.</label>
+                    <label><input type="radio" name="q4_energia" value="b_media_deducao"> B) Rede elétrica tradicional.</label>
+                    <label><input type="radio" name="q4_energia" value="c_alta_deducao"> C) Geradores a diesel integralmente.</label>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="form-group">
+                <label>5. O conselho administrativo possui diversidade de gênero/etnia?</label>
+                <div class="options">
+                    <label><input type="radio" name="q5_diversidade" required value="a_sem_deducao"> A) Sim, com metas formais.</label>
+                    <label><input type="radio" name="q5_diversidade" value="b_media_deducao"> B) Sim, sem metas formais.</label>
+                    <label><input type="radio" name="q5_diversidade" value="c_alta_deducao"> C) Não, maioria homogênea.</label>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="form-group">
+                <label>6. Frequência de treinamentos em ética, segurança e sustentabilidade:</label>
+                <div class="options">
+                    <label><input type="radio" name="q6_treinamento" required value="a_sem_deducao"> A) Anual com avaliação.</label>
+                    <label><input type="radio" name="q6_treinamento" value="b_media_deducao"> B) Apenas onboarding.</label>
+                    <label><input type="radio" name="q6_treinamento" value="c_alta_deducao"> C) Não há treinamento.</label>
+                </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="form-group">
+                <label>7. Código de Ética e Canal de Denúncias:</label>
+                <div class="options">
+                    <label><input type="radio" name="q7_etica" required value="a_sem_deducao"> A) Externo e independente.</label>
+                    <label><input type="radio" name="q7_etica" value="b_media_deducao"> B) Interno apenas.</label>
+                    <label><input type="radio" name="q7_etica" value="c_alta_deducao"> C) Não possui canal formal.</label>
+                </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="form-group">
+                <label>8. Publicação anual de relatórios de sustentabilidade:</label>
+                <div class="options">
+                    <label><input type="radio" name="q8_relatorios" required value="a_sem_deducao"> A) Auditados por terceiros.</label>
+                    <label><input type="radio" name="q8_relatorios" value="b_media_deducao"> B) Não auditados.</label>
+                    <label><input type="radio" name="q8_relatorios" value="c_alta_deducao"> C) Não há publicação.</label>
+                </div>
+            </div>
+
+            <!-- 9 -->
+            <div class="form-group">
+                <label>9. Certificações ambientais (ex: ISO 14001):</label>
+                <div class="options">
+                    <label><input type="radio" name="q9_certificacao" required value="a_sem_deducao"> A) Possui certificação válida.</label>
+                    <label><input type="radio" name="q9_certificacao" value="b_media_deducao"> B) Em processo de certificação.</label>
+                    <label><input type="radio" name="q9_certificacao" value="c_alta_deducao"> C) Não possui certificação.</label>
+                </div>
+            </div>
+
+            <!-- 10 -->
+            <div class="form-group">
+                <label>10. Programas de saúde e bem-estar:</label>
+                <div class="options">
+                    <label><input type="radio" name="q10_saude" required value="a_sem_deducao"> A) Programas robustos com orçamento.</label>
+                    <label><input type="radio" name="q10_saude" value="b_media_deducao"> B) Programas básicos.</label>
+                    <label><input type="radio" name="q10_saude" value="c_alta_deducao"> C) Apenas exigido por lei.</label>
+                </div>
+            </div>
+
+            <br>
+            <button type="submit" class="cta-button">Enviar Formulário</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sustain Flow</p>
+    </footer>
+
+</body>
+</html>
