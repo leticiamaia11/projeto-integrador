@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* ocupa 100% da altura da tela */
+  overflow: hidden; /* evita scroll desnecessário */
+}
+
+.fundo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantém a proporção da imagem e preenche a tela */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* cor semi-transparente */
+}
+
+.conteudo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+
