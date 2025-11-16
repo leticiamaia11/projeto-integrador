@@ -5,22 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sustain Flow — Formulário ESG</title>
     <link rel="shortcut icon" href="imagens/favicon-16x16.png" type="image/x-icon">
-    <link rel="stylesheet" href="interno.css">
-</head>
+    <link rel="stylesheet" href="interno.css"> <link rel="stylesheet" href="style.css"> </head>
 <body>
     <header>
         <div class="logo"><img src="imagens/logo.png" alt="Logo Sustain Flow"></div>
-        </nav>
+        <div class="container">
+            </div>
     </header>
 
     <hr>
 
     <main>
-        <form class="form-esg">
-            <h1>Práticas de Sustentabilidade</h1>
-            <p>Responda às perguntas abaixo. A pontuação inicial é de 1000 pontos.</p>
+        <form action="processa_formulario_fornecedor.php" method="POST" class="form-esg">
+            
+            <h1>Avaliação de Sustentabilidade</h1>
+            <p>Pontuação inicial: 1000 pontos. O resultado final será exibido no ranking.</p>
 
-            <!-- 1 -->
+            <hr>
+
+            <h2>1. Dados do Fornecedor</h2>
+            
+            <div class="form-group">
+                <label for="razao_social">Razão Social</label>
+                <input type="text" id="razao_social" name="razao_social" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cnpj">CNPJ (Apenas números, 14 dígitos)</label>
+                <input type="text" id="cnpj" name="cnpj" required maxlength="14" pattern="\d{14}" title="Digite 14 números para o CNPJ">
+            </div>
+            
+            <div class="form-group">
+                <label for="endereco">Endereço Completo</label>
+                <input type="text" id="endereco" name="endereco" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail de Contato</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="text" id="telefone" name="telefone">
+            </div>
+
+            <hr>
+
+            <h2>2. Questionário ESG</h2>
+
             <div class="form-group">
                 <label>1. A empresa possui uma política formal de redução de emissões de CO2?</label>
                 <div class="options">
@@ -30,7 +63,6 @@
                 </div>
             </div>
 
-            <!-- 2 -->
             <div class="form-group">
                 <label>2. Como é feito o descarte e gestão de resíduos industriais?</label>
                 <div class="options">
@@ -40,7 +72,6 @@
                 </div>
             </div>
 
-            <!-- 3 -->
             <div class="form-group">
                 <label>3. Percentual aproximado de água de reuso?</label>
                 <div class="options">
@@ -50,7 +81,6 @@
                 </div>
             </div>
 
-            <!-- 4 -->
             <div class="form-group">
                 <label>4. Principal fonte de energia elétrica da operação:</label>
                 <div class="options">
@@ -60,7 +90,6 @@
                 </div>
             </div>
 
-            <!-- 5 -->
             <div class="form-group">
                 <label>5. O conselho administrativo possui diversidade de gênero/etnia?</label>
                 <div class="options">
@@ -70,7 +99,6 @@
                 </div>
             </div>
 
-            <!-- 6 -->
             <div class="form-group">
                 <label>6. Frequência de treinamentos em ética, segurança e sustentabilidade:</label>
                 <div class="options">
@@ -80,7 +108,6 @@
                 </div>
             </div>
 
-            <!-- 7 -->
             <div class="form-group">
                 <label>7. Código de Ética e Canal de Denúncias:</label>
                 <div class="options">
@@ -90,7 +117,6 @@
                 </div>
             </div>
 
-            <!-- 8 -->
             <div class="form-group">
                 <label>8. Publicação anual de relatórios de sustentabilidade:</label>
                 <div class="options">
@@ -100,7 +126,6 @@
                 </div>
             </div>
 
-            <!-- 9 -->
             <div class="form-group">
                 <label>9. Certificações ambientais (ex: ISO 14001):</label>
                 <div class="options">
@@ -110,7 +135,6 @@
                 </div>
             </div>
 
-            <!-- 10 -->
             <div class="form-group">
                 <label>10. Programas de saúde e bem-estar:</label>
                 <div class="options">

@@ -1,29 +1,29 @@
 <?php
+// ===============================================
+// ATIVA EXIBIÇÃO DE ERROS PARA DEBUG (REMOVER EM PRODUÇÃO)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+// ===============================================
+
+
+// Arquivo: conexao.php
 // Configurações do Banco de Dados
-define('DB_HOST', '127.0.0.1'); // usando 127.0.0.1 ao invés de localhost
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'sustainflow_db');
-define('DB_PORT', '3307');
+$servername = "localhost";
+$username = "root";   // GERALMENTE É 'root' NO XAMPP
+$password = "root";     // GERALMENTE É VAZIA ('') NO XAMPP
+$dbname = "sustainflow_db"; // VERIFIQUE O NOME EXATO DO SEU BANCO DE DADOS
 
-try {
-    // Cria a instância de PDO para MySQL, incluindo a porta
-    $pdo = new PDO(
-        "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=utf8",
-        DB_USER,
-        DB_PASS
-    );
-    
-    // Define o modo de erro para exceções
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// Conexão
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-} catch (PDOException $e) {
-    // Interrompe a execução em caso de erro de conexão
-    die("Erro na conexão com o banco de dados: " . $e->getMessage());
+// VERIFICA SE HOUVE ERRO E MOSTRA A MENSAGEM DETALHADA
+if ($conn->connect_error) {
+    // Se a conexão falhar, o script para AQUI e exibe o erro exato:
+    die("Erro FATAL na conexão com o banco de dados: " . $conn->connect_error . 
+        "<br>Verifique se o MySQL no XAMPP está ativo e se os dados (usuário, senha, dbname) em conexao.php estão corretos.");
 }
 
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-echo "✅ Conexão estabelecida com sucesso!";
-
+// Configura o charset
+$conn->set_charset("utf8mb4");
 ?>
