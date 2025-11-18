@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sustain Flow — Formulário ESG</title>
     <link rel="shortcut icon" href="imagens/favicon-16x16.png" type="image/x-icon">
-    <link rel="stylesheet" href="interno.css"> <link rel="stylesheet" href="style.css"> </head>
+    <link rel="stylesheet" href="style.css"> 
+</head>
 <body>
     <header>
         <div class="logo"><img src="imagens/logo.png" alt="Logo Sustain Flow"></div>

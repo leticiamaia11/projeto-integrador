@@ -12,11 +12,8 @@ if (isset($_GET['status']) && $_GET['status'] == 'cadastro_sucesso') {
 <html lang="pt-br">
 <head>
     <title>Cadastro de Usuário | Admin</title>
+    <link rel="shortcut icon" href="imagens/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css"> 
-    <style>
-        /* CSS adicional para garantir o posicionamento absoluto do back-link funcione */
-        main { position: relative; } 
-    </style>
 </head>
 <body>
     <header>

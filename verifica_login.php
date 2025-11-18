@@ -1,25 +1,14 @@
 <?php
-require_once __DIR__ . 'verifica_admin.php';
-?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="utf-8" />
-  <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <div class="logo"><img src="imagens/logo.png" alt="Logo"></div>
-    <nav>
-      <a href="principal.php">Principal</a>
-      <a href="logout.php">Sair</a>
-    </nav>
-  </header>
+// Arquivo: verifica_sessao.php (Verificador de login geral)
 
-  <main>
-    <h1>Bem-vindo, <?= htmlentities($_SESSION['nome']) ?></h1>
-    <p>Painel do administrador.</p>
-  </main>
-</body>
-</html>
+// Inicia a sessão para que possamos acessar as variáveis de usuário
+session_start();
+
+// Verifica se a variável de sessão 'id' ou 'nome' existe
+if (!isset($_SESSION['id'])) {
+    // Se o usuário não estiver logado, redireciona para a página de login
+    header("Location: login.php?error=nao_logado");
+    exit;
+}
+// Se estiver logado, o script prossegue para exibir o HTML da página que o incluiu.
+?>

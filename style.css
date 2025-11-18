@@ -207,3 +207,165 @@ footer {
     padding: 8px 0;
     border-bottom: 1px dotted #AAA;
 }
+
+/* ESTILOS ESPECÍFICOS PARA O RANKING E TABELA */
+/* 
+
+/* Container que simula o 'cartão' para a tabela, permitindo largura maior que o form-container */
+.table-wrapper {
+    width: 95%; 
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.4);
+    text-align: left;
+}
+
+/* Estilo para a tabela */
+table {
+    width: 100%;
+    border-collapse: separate; /* Permite border-radius */
+    border-spacing: 0;
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.95); /* Fundo da tabela quase branco */
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+/* Cabeçalho */
+thead th {
+    background-color: var(--primary-hover); 
+    color: var(--text-light);
+    padding: 15px 12px;
+    text-align: left;
+    font-size: 1em;
+    font-weight: bold;
+    text-shadow: none;
+}
+
+/* Corpo da tabela */
+tbody td {
+    padding: 12px;
+    border-bottom: 1px solid #E0E6D6; /* Linha divisória suave */
+    color: var(--text-dark);
+    text-shadow: none;
+    font-size: 0.95em;
+}
+
+/* Efeito Zebrado */
+tbody tr:nth-child(odd) {
+    background-color: #F8F8F8;
+}
+
+/* Efeito Hover */
+tbody tr:hover {
+    background-color: #E6EAE0;
+}
+
+/* Estilos de cor para as Classificações */
+.rank-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-weight: bold;
+    color: var(--text-dark);
+    text-shadow: none;
+    font-size: 0.9em;
+}
+
+.rank-excelente { background-color: #71b860; color: white; }
+.rank-bom { background-color: #c9e373; }
+.rank-aceitavel { background-color: #ffc457; }
+.rank-critico { background-color: #e07474; color: white; }
+
+/* Ajuste para o H1 dentro do container */
+.table-wrapper h1 {
+    text-align: center;
+    color: var(--text-dark);
+    text-shadow: none;
+    margin-bottom: 0;
+}
+
+/* ESTILO DO FORMULÁRIO ESG (CARTÃO GRANDE) */
+.form-esg {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px 50px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.45);
+    text-align: left;
+    backdrop-filter: blur(3px);
+}
+
+.form-esg h1,
+.form-esg h2 {
+    color: var(--text-light);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    font-family: 'DM Serif Text', serif;
+}
+
+.form-esg p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+.form-esg .form-group {
+    margin-bottom: 22px;
+}
+
+.form-esg label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+    font-weight: bold;
+    font-size: 1.1em;
+    text-shadow: none;
+}
+
+.form-esg input[type="text"],
+.form-esg input[type="email"],
+.form-esg input[type="number"],
+.form-esg textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #A3AD90;
+    background: #fff;
+    color: var(--text-dark);
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+/* Cada opção: radio + texto juntos */
+.options label {
+    display: grid;
+    grid-template-columns: 25px 1fr; /* radio fixo + texto alinhado */
+    align-items: start;
+    column-gap: 10px;
+    width: 100%;
+    margin: 6px 0;
+}
+
+/* Container das opções */
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.options input[type="radio"] {
+    transform: scale(1.3);
+    margin-right: 6px;
+}
+
+/* Ajuste do botão do formulário ESG */
+.form-esg .cta-button {
+    margin-top: 20px;
+    width: 100%;
+    font-size: 1.2em;
+    padding: 17px;
+}

@@ -5,6 +5,7 @@ include('verifica_admin.php');
 <html lang="pt-br">
 <head>
     <title>Dashboard Administrativo | Sustain Flow</title>
+    <link rel="shortcut icon" href="imagens/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
