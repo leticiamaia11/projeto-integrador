@@ -26,15 +26,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssss", $nome, $email, $senha_hash, $perfil_acesso);
 
     if ($stmt->execute()) {
-        header("Location: cadastro_usuario.php?status=cadastro_sucesso");
+    header("Location: cadastro_usuario.php?status=cadastro_sucesso");
+    exit();
+} else {
+    if ($conn->errno == 1062) {
+        header("Location: cadastro_usuario.php?status=email_duplicado");
         exit();
     } else {
-        if ($conn->errno == 1062) {
-             die("Erro: O e-mail '$email' já está registrado no sistema.");
-        } else {
-             die("Erro ao cadastrar: " . $stmt->error);
-        }
+        header("Location: cadastro_usuario.php?status=erro_interno");
+        exit();
     }
+}
     $stmt->close();
     $conn->close();
 }

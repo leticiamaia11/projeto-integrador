@@ -1,5 +1,5 @@
 <?php
-// includes/verifica_admin.php
+// verifica_admin.php
 session_start();
 
 if (!isset($_SESSION['id'])) {
@@ -8,7 +8,7 @@ if (!isset($_SESSION['id'])) {
 }
 
 if (!isset($_SESSION['perfil_acesso']) || $_SESSION['perfil_acesso'] !== 'admin') {
-    header("Location: ../public/principal.php?error=acesso_nao_autorizado");
+    header("Location: principal.php?error=acesso_nao_autorizado");
     exit;
 }
 ?>

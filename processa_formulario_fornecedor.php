@@ -1,4 +1,12 @@
 <?php
+include("conexao.php"); 
+include("utils.php"); 
+
+if (!isset($conn) || $conn->connect_errno) {
+    header("Location: formulario_fornecedor.php?erro=interno");
+    exit();
+}
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
@@ -63,20 +71,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $stmt_check->close();
 
-    // 4. CÁLCULO DE PONTUAÇÃO (Total 1000 pontos)
-    $pontuacao_final = 0;
-    // Cada questão vale 100 pontos.
-    $pontos_por_questao = 100;
+    // 4. CÁLCULO DE PONTUAÇÃO (RF08)
+    $pontuacao_final = 1000; // começa em 1000
     
     foreach ($respostas as $resposta) {
-        if ($resposta == 'a_sem_deducao') {
-            $pontuacao_final += $pontos_por_questao; // 100 pontos
-        } elseif ($resposta == 'b_media_deducao') {
-            $pontuacao_final += ($pontos_por_questao / 2); // 50 pontos
-        } 
-        // Se for 'c_alta_deducao', a pontuação adicionada é 0
+        if ($resposta === 'b_media_deducao') {
+            $pontuacao_final -= 30;
+        } elseif ($resposta === 'c_alta_deducao') {
+            $pontuacao_final -= 50;
+        }
     }
-    // Pontuação máxima possível: 10 * 100 = 1000.
+
+    // garante que nunca fique negativo
+    if ($pontuacao_final < 0) {
+     $pontuacao_final = 0;
+    }
+
 
     // 5. SALVAR RESPOSTAS E PONTUAÇÃO (Requisito 09)
     $sql_respostas = "INSERT INTO respostas_fornecedores (
@@ -98,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     );
 
     if ($stmt_respostas->execute()) {
-        header("Location: ranking.php?status=formulario_sucesso&score=" . $pontuacao_final);
+        header("Location: resultado_fornecedor.php?score=" . $pontuacao_final);
         exit();
     } else {
         die("Erro ao salvar o formulário de respostas: " . $stmt_respostas->error);

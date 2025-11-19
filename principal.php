@@ -46,16 +46,16 @@ $is_admin = (isset($_SESSION['perfil_acesso']) && $_SESSION['perfil_acesso'] ===
 
             <div class="container-links" style="display: flex; flex-direction: column; gap: 15px; margin-top: 30px;">
                 
-                <a href="formulario_sustentavel.php" class="cta-button" style="width: 100%;">
+                <a href="formulario_fornecedor.php" class="cta-button">
                     Acessar Formulário Sustentável
                 </a>
                 
-                <a href="ranking.php" class="cta-button" style="width: 100%;">
+                <a href="ranking.php" class="cta-button">
                     Visualizar Ranking de Fornecedores
                 </a>
-                
-                <a href="relatorios.php" class="cta-button" style="width: 100%;">
-                    Meus Relatórios
+
+                <a href="https://wa.me/5541987679272" class="cta-button">
+                    Entre em contato
                 </a>
             </div>
         </div>

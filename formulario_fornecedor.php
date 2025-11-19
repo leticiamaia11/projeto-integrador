@@ -1,3 +1,14 @@
+<?php
+include("conexao.php"); 
+include("utils.php");   
+
+if ($conn->connect_errno) {
+    // Formulário não carrega
+    header("Location: formulario_fornecedor.php?erro=nao_carregou");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,6 +19,31 @@
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
+
+    <?php if (isset($_GET['erro'])): ?>
+    <div class="erro-mensagem" style="
+        background: #ffdddd;
+        color: #a30000;
+        padding: 15px;
+        border-left: 5px solid #cc0000;
+        margin: 20px auto;
+        width: 90%;
+        border-radius: 6px;
+        font-weight: bold;
+        text-align: center;
+    ">
+        <?php
+            if ($_GET['erro'] === 'nao_carregou') {
+                echo "Erro: O formulário não pôde ser carregado. Tente novamente mais tarde.";
+            } 
+            elseif ($_GET['erro'] === 'interno') {
+                echo "Erro interno ao processar sua requisição. Nossa equipe já está verificando.";
+            }
+        ?>
+    </div>
+<?php endif; ?>
+
+
     <header>
         <div class="logo"><img src="imagens/logo.png" alt="Logo Sustain Flow"></div>
         <div class="container">

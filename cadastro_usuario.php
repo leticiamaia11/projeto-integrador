@@ -3,10 +3,28 @@
 include('verifica_admin.php'); 
 
 $status_message = "";
-// Exibe mensagem de sucesso se vier de processa_cadastro_usuario.php
+
+// Mensagem de cadastro com sucesso
 if (isset($_GET['status']) && $_GET['status'] == 'cadastro_sucesso') {
     $status_message = '<div class="status-message" style="background: var(--primary-color); color: var(--text-light); padding: 10px; border-radius: 6px; margin-bottom: 20px; font-weight: bold;">Usuário cadastrado com sucesso!</div>';
 }
+
+// Outras mensagens de erro
+if (isset($_GET['status'])) {
+
+    if ($_GET['status'] == 'email_duplicado') {
+        $status_message = '<div class="status-message" style="background: #c0392b; color: white; padding: 10px; border-radius: 6px; margin-bottom: 20px; font-weight: bold;">
+            E-mail já cadastrado.
+        </div>';
+    }
+
+    if ($_GET['status'] == 'erro_interno') {
+        $status_message = '<div class="status-message" style="background: #c0392b; color: white; padding: 10px; border-radius: 6px; margin-bottom: 20px; font-weight: bold;">
+            Erro interno. Nenhum cadastro foi realizado.
+        </div>';
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
