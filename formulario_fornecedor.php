@@ -46,8 +46,7 @@ if ($conn->connect_errno) {
 
     <header>
         <div class="logo"><img src="imagens/logo.png" alt="Logo Sustain Flow"></div>
-        <div class="container">
-            </div>
+        <div class="container"></div>
     </header>
 
     <hr>

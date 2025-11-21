@@ -4,27 +4,36 @@ include('verifica_admin.php');
 
 $status_message = "";
 
-// Mensagem de cadastro com sucesso
-if (isset($_GET['status']) && $_GET['status'] == 'cadastro_sucesso') {
-    $status_message = '<div class="status-message" style="background: var(--primary-color); color: var(--text-light); padding: 10px; border-radius: 6px; margin-bottom: 20px; font-weight: bold;">Usuário cadastrado com sucesso!</div>';
-}
-
-// Outras mensagens de erro
+// Verifica mensagens pela URL
 if (isset($_GET['status'])) {
 
-    if ($_GET['status'] == 'email_duplicado') {
-        $status_message = '<div class="status-message" style="background: #c0392b; color: white; padding: 10px; border-radius: 6px; margin-bottom: 20px; font-weight: bold;">
-            E-mail já cadastrado.
-        </div>';
-    }
+    switch ($_GET['status']) {
 
-    if ($_GET['status'] == 'erro_interno') {
-        $status_message = '<div class="status-message" style="background: #c0392b; color: white; padding: 10px; border-radius: 6px; margin-bottom: 20px; font-weight: bold;">
-            Erro interno. Nenhum cadastro foi realizado.
-        </div>';
+        case 'cadastro_sucesso':
+            $status_message = '
+            <div class="status-message" 
+                 style="background: var(--primary-color); color: var(--text-light); padding: 10px; border-radius: 6px; margin-bottom: 20px; font-weight: bold;">
+                Usuário cadastrado com sucesso!
+            </div>';
+            break;
+
+        case 'email_duplicado':
+            $status_message = '
+            <div class="status-message" 
+                 style="background: #c0392b; color: white; padding: 10px; border-radius: 6px; margin-bottom: 20px; font-weight: bold;">
+                E-mail já cadastrado. Nenhuma conta duplicada foi criada.
+            </div>';
+            break;
+
+        case 'erro_interno':
+            $status_message = '
+            <div class="status-message" 
+                 style="background: #c0392b; color: white; padding: 10px; border-radius: 6px; margin-bottom: 20px; font-weight: bold;">
+                Erro interno. Nenhum cadastro foi realizado.
+            </div>';
+            break;
     }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -96,10 +105,3 @@ if (isset($_GET['status'])) {
                     }
                 });
             </script>
-        </div>
-    </main>
-    
-    <footer>
-        </footer>
-</body>
-</html>

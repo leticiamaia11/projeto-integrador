@@ -9,15 +9,23 @@ include('verifica_admin.php');
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
+
     <header>
-        </header>
+        <div class="logo"><img src="imagens/logo.png" alt="Logo Sustain Flow"></div>
+        <div class="container"></div>
+    </header>
+
+    <hr>
 
     <main>
         <div class="form-container"> 
             <h1>Dashboard Administrativo</h1>
             <p>Bem-vindo(a) Admin!</p>
             
-            <a href="cadastro_usuario.php">Cadastrar Novo Usuário do Sistema (Admin/Comum)</a>
+            <a href="admin_empresas.php">Gerenciar Empresas</a>
+
+            <br>
+            <br>
                 
             <a href="ranking.php">Visualizar Ranking e Gerar Relatórios</a>
 
@@ -28,6 +36,8 @@ include('verifica_admin.php');
     </main>
 
     <footer>
-        </footer>
+        <p>&copy; 2025 Sustain Flow</p>
+    </footer>
+
 </body>
 </html>

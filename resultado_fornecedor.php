@@ -27,6 +27,7 @@ if ($score >= 800) {
 <head>
     <meta charset="UTF-8">
     <title>Resultado da Avaliação ESG</title>
+    <link rel="shortcut icon" href="imagens/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -75,6 +76,8 @@ if ($score >= 800) {
         </div>
 
     </main>
-
+<footer>
+    <p>&copy; 2025 Sustain Flow</p>
+</footer>
 </body>
 </html>

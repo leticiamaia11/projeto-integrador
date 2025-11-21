@@ -92,6 +92,8 @@ $result = $conn->query($sql);
             </table>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+        <p>&copy; 2025 Sustain Flow</p>
+    </footer>
 </body>
 </html>
